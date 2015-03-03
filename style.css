@@ -63,6 +63,9 @@ td {
 	height: 60px;
 	float: left;
 	font-weight: bold;
+	text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
 }
 
 .middle {
@@ -75,6 +78,9 @@ td {
 	height: 60px;
 	float: left;
 	font-weight: bold;
+	text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
 }
 
 .low {
@@ -87,6 +93,9 @@ td {
 	height: 60px;
 	float: left;
 	font-weight: bold;
+	text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
 }
 
 .hidden {
