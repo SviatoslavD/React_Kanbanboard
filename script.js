@@ -32,22 +32,29 @@ var MainTable = React.createClass({
 			this.inprogressAll.push(task);
 			if(parentColumn === "todo")
 				this.refreshColumn(this.todoAll, task.taskid);
-			else
+			else if(parentColumn === "done")
 				this.refreshColumn(this.doneAll, task.taskid);
+			// task was dropped in the same column
+			else
+				this.refreshColumn(this.inprogressAll, task.taskid);
 
 		} else if(targetColumn === "done") {
 			this.doneAll.push(task);
 			if(parentColumn === "todo")
 				this.refreshColumn(this.todoAll, task.taskid);
-			else
+			else if(parentColumn === "inprogress")
 				this.refreshColumn(this.inprogressAll, task.taskid);
+			else
+				this.refreshColumn(this.doneAll, task.taskid);
 
 		} else {
 			this.todoAll.push(task);
 			if(parentColumn === "inprogress")
 				this.refreshColumn(this.inprogressAll, task.taskid);
-			else
+			else if(parentColumn === "done")
 				this.refreshColumn(this.doneAll, task.taskid);
+			else 
+				this.refreshColumn(this.todoAll, task.taskid);
 		}
 		this.setState({kanbanBoard: this.state.kanbanBoard + 1});
 	},
